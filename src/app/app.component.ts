@@ -6,5 +6,22 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  public file1Value: any;
+  public file2Value: any;
+  public destiationFileValue: any;
+
+ file1Function(val) {
+    this.file1Value = val;
+  }
+
+  file2Function(val) {
+    this.file2Value = val;
+  }
+
+  destinationFileFunction(val) {
+    this.destiationFileValue = val;
+  }
+
+
+
 }
