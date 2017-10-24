@@ -1,25 +1,21 @@
- <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-      <a class="navbar-brand" href="#">Data Comparison Tool</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+  <a class="navbar-brand" href="#">Data Comparison Tool</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 </nav>
 
 <main class="" style="margin:3%">
 
-
 <label class="btn btn-primary" for="file1">
     <input #file1 id="file1" type="file" style="display:none"
-    (change)="onFileChange($event, table='data'); file1Value = $event.target.value" multiple="false">
+    (change)="onFileChange($event, '1'); file1Value = $event.target.value" multiple="false">
     File 1
 </label>
 <span>{{file1Value}}</span>
-
 <table class="sjs-table">
-  <tr>
-			<td>
-				{{data}}
-			</td>
+  <tr *ngFor="let a of TableForFile1">
+			{{a}}
 	</tr>
 </table>
 
@@ -27,10 +23,15 @@
 
 <label  class="btn btn-primary" for="file2">
     <input #file2 id="file2" type="file" style="display:none"
-    (change)="onFileChange($event); file2Value= $event.target.value" multiple="false">
+    (change)="onFileChange($event, '2'); file2Value= $event.target.value" multiple="false">
     File 2
 </label>
 <span class='' id="upload-file-info2">{{file2Value}}</span>
+<table class="sjs-table">
+  <tr *ngFor="let b of TableForFile2">
+			{{b}}
+	</tr>
+</table>
 
 <br/><br/>
 
@@ -43,15 +44,6 @@
 
 <br/><br/>
 <input type="submit" value="Compare" class="btn"/>
-
-
-  <div>
-    <table border="1" class="demoTable">
-      <tr *ngFor="let x of csvData">
-        <td *ngFor="let y of x">{{ y }}</td>
-      </tr>
-    </table>
-  </div>
 
 </main>
 
