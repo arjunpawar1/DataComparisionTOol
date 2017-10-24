@@ -6,18 +6,29 @@
 </nav>
 
 <main class="" style="margin:3%">
+
+
 <label class="btn btn-primary" for="file1">
     <input #file1 id="file1" type="file" style="display:none"
-    (change)="file1Function(file1.value);">
-    File Path 1
+    (change)="onFileChange($event, table='data'); file1Value = $event.target.value" multiple="false">
+    File 1
 </label>
 <span>{{file1Value}}</span>
+
+<table class="sjs-table">
+  <tr>
+			<td>
+				{{data}}
+			</td>
+	</tr>
+</table>
+
 <br/><br/>
 
 <label  class="btn btn-primary" for="file2">
     <input #file2 id="file2" type="file" style="display:none"
-    (change)="file2Function(file2.value)">
-    File Path 2
+    (change)="onFileChange($event); file2Value= $event.target.value" multiple="false">
+    File 2
 </label>
 <span class='' id="upload-file-info2">{{file2Value}}</span>
 
@@ -31,7 +42,16 @@
 <span class='' id="upload-file-info3">{{destiationFileValue}}</span>
 
 <br/><br/>
-<input type="submit" value="Compare" class="btn btn-default"/>
+<input type="submit" value="Compare" class="btn"/>
+
+
+  <div>
+    <table border="1" class="demoTable">
+      <tr *ngFor="let x of csvData">
+        <td *ngFor="let y of x">{{ y }}</td>
+      </tr>
+    </table>
+  </div>
 
 </main>
 
