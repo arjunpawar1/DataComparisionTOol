@@ -17,7 +17,7 @@
 <span>{{file1Value}}</span>
 <table class="sjs-table">
   <tr *ngFor="let a of TableForFile1">
-			{{a}}
+		<label for="radio"><input type="radio" (click)="getSelectedValue1(a, $event)" name="radio" /> {{a}}</label>
 	</tr>
 </table>
 
@@ -33,11 +33,10 @@
 <span class='' id="upload-file-info2">{{file2Value}}</span>
 <table class="sjs-table">
   <tr *ngFor="let b of TableForFile2">
-			{{b}}
+	<label for="radio"><input type="radio" name="radio" (click)="getSelectedValue2(b, $event)" />	{{b}}</label>
 	</tr>
 </table>
 </div>
-
 
 <div class="col col-xs-12">
 

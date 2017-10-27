@@ -68,4 +68,17 @@ export(): void {
   destinationFileFunction(val) {
     this.destiationFileValue = val;
   }
+
+
+  getSelectedValue1(val, event) {
+    if (event.target.checked) {
+    console.log(val);
+    }
+  }
+
+  getSelectedValue2(val, event) {
+    if (event.target.checked) {
+    console.log(val);
+    }
+  }
 }
