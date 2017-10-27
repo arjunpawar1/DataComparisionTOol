@@ -21,9 +21,11 @@ function s2ab(s: string): ArrayBuffer {
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  private destiationFileValue: any;
-  private TableForFile1: any;
-  private TableForFile2: any;
+  public destiationFileValue: any;
+  public TableForFile1: any;
+  public TableForFile2: any;
+  public file1Value: any;
+  public file2Value: any;
 
   data: AOA;
   wopts: XLSX.WritingOptions = { bookType: 'xlsx', type: 'binary' };
