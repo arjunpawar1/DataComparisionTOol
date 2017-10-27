@@ -43,6 +43,7 @@
 <br/><br/>
 <label class="btn btn-primary" for="destinationFile">
     <input #destinationFile id="destinationFile" type="file" style="display:none"
+    webkitdirectory directory multiple
     (change) ="destinationFileFunction(destinationFile.value)">
     Destination File Path:
 </label>
